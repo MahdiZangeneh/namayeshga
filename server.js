@@ -8,10 +8,10 @@ const PORT = process.env.PORT || 3000;
 
 // MongoDB connection
 mongoose
-  .connect(
-    "mongodb+srv://hordebusiness91:Qr1H2nMS4myCj7HV@namayeshga.qvvejle.mongodb.net/",
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
